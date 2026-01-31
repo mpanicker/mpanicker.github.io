@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVAC Pro – Support</title>
+    <style>
+        /* ─── Reset & Base ─── */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-bg:            #f2f2f7;
+            --color-card:          #ffffff;
+            --color-text:          #1c1c1e;
+            --color-text-secondary:#6c6c70;
+            --color-accent:        #0071e3;
+            --color-accent-hover:  #0077ed;
+            --color-border:        #d1d1d6;
+            --color-green:         #34c759;
+            --color-orange:        #ff9500;
+            --color-red:           #ff3b30;
+            --radius:              12px;
+            --shadow:              0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg:            #1c1c1e;
+                --color-card:          #2c2c2e;
+                --color-text:          #f2f2f7;
+                --color-text-secondary:#8e8e93;
+                --color-border:        #3a3a3c;
+                --shadow:              0 2px 12px rgba(0,0,0,0.3);
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── Header ─── */
+        header {
+            background: var(--color-card);
+            border-bottom: 1px solid var(--color-border);
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        header .icon {
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: var(--color-text-secondary);
+            font-size: 15px;
+            margin-top: 4px;
+        }
+
+        /* ─── Layout ─── */
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        /* ─── Section Titles ─── */
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+            margin-top: 36px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        /* ─── Cards ─── */
+        .card {
+            background: var(--color-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 20px;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            transition: background 0.15s ease;
+        }
+
+        .card-header:hover {
+            background: rgba(0, 113, 227, 0.04);
+        }
+
+        .card-header .emoji {
+            font-size: 22px;
+            flex-shrink: 0;
+            width: 36px;
+            text-align: center;
+        }
+
+        .card-header .title {
+            font-size: 16px;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .card-header .chevron {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            transition: transform 0.2s ease;
+        }
+
+        .card-header.open .chevron {
+            transform: rotate(180deg);
+        }
+
+        .card-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .card-body.open {
+            max-height: 2000px;
+        }
+
+        .card-body-inner {
+            padding: 0 20px 20px 70px;
+            color: var(--color-text-secondary);
+            font-size: 15px;
+        }
+
+        .card-body-inner p {
+            margin-bottom: 10px;
+        }
+
+        .card-body-inner p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-body-inner ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-body-inner ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            gap: 8px;
+        }
+
+        .card-body-inner ul li:last-child {
+            border-bottom: none;
+        }
+
+        .card-body-inner ul li::before {
+            content: "›";
+            color: var(--color-accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ─── Requirements badge list ─── */
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: rgba(0, 113, 227, 0.08);
+            color: var(--color-accent);
+        }
+
+        /* ─── Steps (numbered) ─── */
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps li {
+            counter-increment: step;
+            display: flex;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .steps li:last-child {
+            border-bottom: none;
+        }
+
+        .steps .step-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .steps .step-text {
+            padding-top: 2px;
+        }
+
+        /* ─── Contact block ─── */
+        .contact-card {
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 28px 24px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            color: var(--color-text-secondary);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-card a.btn {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 8px;
+            transition: background 0.15s ease;
+        }
+
+        .contact-card a.btn:hover {
+            background: var(--color-accent-hover);
+        }
+
+        /* ─── Footer ─── */
+        footer {
+            text-align: center;
+            padding: 24px 20px 40px;
+            color: var(--color-text-secondary);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 480px) {
+            .card-body-inner {
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════ HEADER ════════════════════════════════════════ -->
+<header>
+    <div class="icon">🔧</div>
+    <h1>HVAC Pro Support</h1>
+    <p>Everything you need to get the most out of HVAC Pro</p>
+</header>
+
+<!-- ════════════════════════════════════════ BODY ══════════════════════════════════════════ -->
+<div class="container">
+
+    <!-- ── Getting Started ── -->
+    <div class="section-title">Getting Started</div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">👋</span>
+            <span class="title">What is HVAC Pro?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>HVAC Pro is a professional equipment management and AI-powered diagnostics app designed for technicians, property managers, homeowners, and maintenance professionals.</p>
+                <p>With on-device Apple Intelligence, you can photograph your equipment and receive instant analysis — no cloud, no account, no data leaving your device.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">📱</span>
+            <span class="title">System Requirements</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>HVAC Pro requires the following to run:</p>
+                <div class="badge-list">
+                    <span class="badge">📲 iOS 18.4 or later</span>
+                    <span class="badge">🧠 Apple Intelligence</span>
+                    <span class="badge">📱 iPhone 15 Pro or later</span>
+                    <span class="badge">📱 iPhone 16 series</span>
+                    <span class="badge">💻 iPad with M1 or later</span>
+                </div>
+                <p style="margin-top: 14px;"><strong>Note:</strong> Equipment lookup and manual entry work on all supported devices. AI-powered photo analysis specifically requires an Apple Intelligence–capable device.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">🚀</span>
+            <span class="title">How to Add Your First Piece of Equipment</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <ol class="steps">
+                    <li><span class="step-num">1</span><span class="step-text">Open the app and tap the <strong>Equipment</strong> tab.</span></li>
+                    <li><span class="step-num">2</span><span class="step-text">Tap the <strong>+</strong> button in the top-right corner.</span></li>
+                    <li><span class="step-num">3</span><span class="step-text">Choose <strong>Look Up Equipment</strong> and enter a model number, or tap <strong>Add Equipment</strong> to enter details manually.</span></li>
+                    <li><span class="step-num">4</span><span class="step-text">Fill in the location and any additional notes, then save.</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Equipment & Lookup ── -->
+    <div class="section-title">Equipment & Lookup</div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">🔍</span>
+            <span class="title">How Does Equipment Lookup Work?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>Enter a model number in the lookup tool and HVAC Pro will match it against a built-in database of 70+ major manufacturer prefixes. When a match is found, specifications like BTU rating, efficiency ratings, and compatible parts are automatically filled in.</p>
+                <p>You can also use the <strong>Enhanced Lookup</strong> option to connect manufacturer APIs for even more detailed data. API keys are stored securely in the iOS Keychain.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">🔢</span>
+            <span class="title">What Does the Serial Number Decoder Do?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>Many HVAC manufacturers encode the manufacturing date directly into the unit's serial number. The serial number decoder parses this information so you can quickly determine when a unit was built — useful for warranty checks and estimating remaining lifespan.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">❓</span>
+            <span class="title">My Model Number Isn't Found</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>The built-in database currently covers 70+ major manufacturer prefixes. If your model isn't recognized, you can still add the equipment manually and fill in the specs yourself.</p>
+                <p>If you're frequently looking up models from a manufacturer that isn't supported, please <a href="#contact" style="color: var(--color-accent);">let us know</a> — we're continuously expanding the database.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── AI Inspections ── -->
+    <div class="section-title">AI Inspections</div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">📸</span>
+            <span class="title">How Do AI-Powered Inspections Work?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <ol class="steps">
+                    <li><span class="step-num">1</span><span class="step-text">Tap the <strong>Inspections</strong> tab and create a new inspection.</span></li>
+                    <li><span class="step-num">2</span><span class="step-text">Take a photo or select one from your library.</span></li>
+                    <li><span class="step-num">3</span><span class="step-text">HVAC Pro analyzes the image entirely on your device using Apple Intelligence.</span></li>
+                    <li><span class="step-num">4</span><span class="step-text">You'll receive a diagnosis including detected issues, a severity rating, and repair recommendations.</span></li>
+                    <li><span class="step-num">5</span><span class="step-text">Tap <strong>Ask Follow-up Questions</strong> to continue the conversation with the AI.</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">💬</span>
+            <span class="title">What Can I Ask in the Follow-up Chat?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>The AI chat remembers your full inspection context, so you can ask detailed follow-up questions in plain English. Common examples:</p>
+                <ul>
+                    <li>What is the estimated cost to repair this?</li>
+                    <li>Can I fix this myself, or do I need a professional?</li>
+                    <li>How urgent is this issue?</li>
+                    <li>What parts do I need for this repair?</li>
+                    <li>How do I prevent this from happening again?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">🧠</span>
+            <span class="title">Why Can't I See AI Features?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>AI features require <strong>Apple Intelligence</strong>, which is available on <strong>iPhone 15 Pro</strong> or later running <strong>iOS 18.4+</strong>. Make sure Apple Intelligence is enabled in your device Settings → Apple Intelligence & Siri.</p>
+                <p>All other features — equipment management, lookup, and manual inspections — work on any supported iOS device.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Customers ── -->
+    <div class="section-title">Customers</div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">👤</span>
+            <span class="title">How Do I Manage Customers?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>The <strong>Customers</strong> tab lets you create and manage customer records. You can associate equipment and inspections with specific customers, making it easy to track service history per site or property.</p>
+                <p>Tap the <strong>+</strong> button in the Customers tab to add a new customer, then link equipment to them from the equipment detail view.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Data & Settings ── -->
+    <div class="section-title">Data & Settings</div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">☁️</span>
+            <span class="title">How Do I Back Up My Data?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>HVAC Pro stores all data locally using SwiftData. To sync across your devices, enable <strong>iCloud</strong> in your device's Settings app. When iCloud is enabled, your equipment, customers, and inspections will automatically stay in sync.</p>
+                <p>You can also enable <strong>Auto Backup</strong> in HVAC Pro's Settings tab for an additional layer of protection.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">⚙️</span>
+            <span class="title">What Settings Are Available?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <ul>
+                    <li><strong>API Keys</strong> – Configure manufacturer API keys for enhanced equipment lookup.</li>
+                    <li><strong>Notifications</strong> – Enable or disable push notifications.</li>
+                    <li><strong>Auto Backup</strong> – Automatically back up your data.</li>
+                    <li><strong>Measurement System</strong> – Switch between Imperial and Metric units.</li>
+                    <li><strong>Default Equipment View</strong> – Choose between list or grid view.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">🔒</span>
+            <span class="title">Is My Data Private and Secure?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>Yes. HVAC Pro is built with a privacy-first design:</p>
+                <ul>
+                    <li>All AI analysis happens entirely on your device — photos never leave it.</li>
+                    <li>No account is required to use the app.</li>
+                    <li>No data is shared with third parties or used for advertising.</li>
+                    <li>API keys are stored securely in the iOS Keychain.</li>
+                    <li>The app works completely offline.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Dashboard ── -->
+    <div class="section-title">Dashboard</div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">📊</span>
+            <span class="title">What's on the Dashboard?</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>The Dashboard gives you a quick overview of your entire HVAC operation:</p>
+                <ul>
+                    <li>Total equipment count and status at a glance.</li>
+                    <li>Recent inspections and any critical issues flagged by AI.</li>
+                    <li>Maintenance activity history.</li>
+                    <li>Quick access to your most-used equipment.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Troubleshooting ── -->
+    <div class="section-title">Troubleshooting</div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">⚠️</span>
+            <span class="title">The App Crashes or Freezes</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <ol class="steps">
+                    <li><span class="step-num">1</span><span class="step-text">Force-close the app and reopen it.</span></li>
+                    <li><span class="step-num">2</span><span class="step-text">Make sure you're running the latest version of iOS and HVAC Pro.</span></li>
+                    <li><span class="step-num">3</span><span class="step-text">Restart your device.</span></li>
+                    <li><span class="step-num">4</span><span class="step-text">If the issue persists, <a href="#contact" style="color: var(--color-accent);">contact us</a> with a description of what you were doing when it crashed.</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">🔋</span>
+            <span class="title">The App Is Using a Lot of Battery</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>On-device AI analysis is compute-intensive and will use more battery during active inspections. This is normal. To reduce overall usage:</p>
+                <ul>
+                    <li>Close the app when you're not actively using it.</li>
+                    <li>Disable background app refresh for HVAC Pro in iOS Settings if you don't need it.</li>
+                    <li>Ensure your device is updated to the latest iOS for the best battery optimization.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" onclick="toggle(this)">
+            <span class="emoji">📷</span>
+            <span class="title">Camera or Photo Library Access Denied</span>
+            <span class="chevron">▼</span>
+        </div>
+        <div class="card-body">
+            <div class="card-body-inner">
+                <p>HVAC Pro needs camera and photo library access to take and store inspection photos. If you denied permission:</p>
+                <ol class="steps">
+                    <li><span class="step-num">1</span><span class="step-text">Open your device <strong>Settings</strong> app.</span></li>
+                    <li><span class="step-num">2</span><span class="step-text">Scroll down and tap <strong>HVAC Pro</strong>.</span></li>
+                    <li><span class="step-num">3</span><span class="step-text">Enable <strong>Camera</strong> and <strong>Photos</strong> permissions.</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Contact ── -->
+    <div id="contact" class="contact-card">
+        <h2>Need More Help?</h2>
+        <p>Our team is here to help. Reach out and we'll get back to you as quickly as possible.</p>
+        <a class="btn" href="mailto:support@hvacpro.app">Email Support</a>
+    </div>
+
+</div>
+
+<!-- ════════════════════════════════════════ FOOTER ════════════════════════════════════════ -->
+<footer>
+    <p>© 2026 HVAC Pro. All rights reserved.</p>
+    <p style="margin-top: 6px;">
+        <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="https://developer.apple.com/app-store/review/guidelines/" target="_blank" rel="noopener">App Store Guidelines</a>
+    </p>
+</footer>
+
+<!-- ════════════════════════════════════════ SCRIPT ════════════════════════════════════════ -->
+<script>
+    function toggle(header) {
+        const body = header.nextElementSibling;
+        const isOpen = body.classList.contains('open');
+
+        // Close all other panels
+        document.querySelectorAll('.card-body.open').forEach(function (el) {
+            if (el !== body) {
+                el.classList.remove('open');
+                el.previousElementSibling.classList.remove('open');
+            }
+        });
+
+        // Toggle this one
+        header.classList.toggle('open', !isOpen);
+        body.classList.toggle('open', !isOpen);
+    }
+</script>
+
+</body>
+</html>
