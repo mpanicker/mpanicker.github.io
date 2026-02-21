@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exactajob Support - Get help with your home repair cost estimation app">
-    <title>Exactajob Support - Help & FAQ</title>
+    <title>Exactajob - Support</title>
     <style>
         * {
             margin: 0;
@@ -16,740 +15,594 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f5f5f7;
+            background: #f5f5f7;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
         
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
             padding: 40px 20px;
-            text-align: center;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
             margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        .quick-links {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .quick-links h2 {
-            margin-bottom: 15px;
+        .section h2 {
             color: #667eea;
-        }
-        
-        .quick-links ul {
-            list-style: none;
-        }
-        
-        .quick-links li {
-            margin: 10px 0;
-        }
-        
-        .quick-links a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .quick-links a:hover {
-            text-decoration: underline;
-        }
-        
-        h2 {
-            color: #2c3e50;
             font-size: 2em;
-            margin: 40px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
         }
         
-        h3 {
-            color: #34495e;
-            font-size: 1.5em;
-            margin: 30px 0 15px 0;
+        .section h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
         
-        h4 {
-            color: #555;
-            font-size: 1.2em;
-            margin: 20px 0 10px 0;
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
         }
         
-        p {
-            margin: 15px 0;
+        .section ul, .section ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
         }
         
-        ul, ol {
-            margin: 15px 0 15px 40px;
+        .section li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
         }
         
-        li {
-            margin: 8px 0;
+        .contact-box {
+            background: #f9f9fb;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .contact-box strong {
+            color: #667eea;
         }
         
         .faq-item {
-            margin: 25px 0;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
         }
         
         .faq-question {
-            font-weight: bold;
-            color: #2c3e50;
-            font-size: 1.1em;
+            font-weight: 600;
+            font-size: 1.15em;
+            color: #333;
             margin-bottom: 10px;
         }
         
         .faq-answer {
-            color: #555;
+            color: #666;
+            line-height: 1.7;
         }
         
-        .section {
-            margin: 40px 0;
-        }
-        
-        .highlight-box {
-            background-color: #e8f4f8;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #3498db;
-        }
-        
-        .warning-box {
-            background-color: #fff3cd;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .success-box {
-            background-color: #d4edda;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #28a745;
-        }
-        
-        .contact-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .contact-box h2 {
-            color: white;
-            border-bottom: none;
-            margin: 0 0 20px 0;
-        }
-        
-        .contact-box a {
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-        
-        .contact-box a:hover {
-            text-decoration: underline;
-        }
-        
-        .tips-grid {
+        .feature-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 20px 0;
         }
         
-        .tip-card {
-            background-color: #f8f9fa;
+        .feature-item {
+            background: #f9f9fb;
             padding: 20px;
             border-radius: 8px;
-            border-top: 4px solid #667eea;
+            border: 2px solid #e0e0e0;
         }
         
-        .tip-card h4 {
-            margin-top: 0;
+        .feature-item strong {
             color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
         }
         
-        footer {
-            background-color: #2c3e50;
+        .button {
+            display: inline-block;
+            background: #667eea;
             color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-        }
-        
-        footer a {
-            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
             text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background 0.3s;
         }
         
-        footer a:hover {
-            text-decoration: underline;
+        .button:hover {
+            background: #5568d3;
         }
         
-        .divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #667eea, transparent);
-            margin: 40px 0;
-        }
-        
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
             font-size: 0.9em;
         }
         
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
         @media (max-width: 768px) {
-            header h1 {
+            .header h1 {
                 font-size: 2em;
             }
             
-            h2 {
-                font-size: 1.5em;
+            .section {
+                padding: 25px;
             }
             
-            .container {
-                padding: 15px;
+            .section h2 {
+                font-size: 1.6em;
             }
             
-            .tips-grid {
+            .feature-list {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>🏠 Exactajob Support</h1>
-        <p>We're here to help you get the most out of your home repair cost estimation app</p>
-    </header>
+    <div class="header">
+        <h1>Exactajob Support</h1>
+        <p>Home Repair Cost Estimation Made Easy</p>
+    </div>
 
     <div class="container">
-        <div class="quick-links">
-            <h2>📞 Quick Links</h2>
+        <!-- Getting Started -->
+        <div class="section">
+            <h2>Getting Started</h2>
+            <p>Welcome to Exactajob! Follow these simple steps to create your first cost estimate:</p>
+            
+            <h3><span class="step-number">1</span>Create a Property</h3>
+            <p>Start by adding your property with basic information:</p>
             <ul>
-                <li>📧 <strong>Email Support:</strong> <a href="mailto:support@exactajob.com">support@exactajob.com</a></li>
-                <li>🌐 <strong>Website:</strong> <a href="https://www.exactajob.com">www.exactajob.com</a></li>
-                <li>📱 <strong>App Store:</strong> <a href="https://apps.apple.com/app/exactajob">Download Exactajob</a></li>
-                <li>🔒 <strong>Privacy Policy:</strong> <a href="privacy.html">View Privacy Policy</a></li>
-                <li>📄 <strong>Terms of Service:</strong> <a href="terms.html">View Terms</a></li>
+                <li>Property name (e.g., "Smith Residence")</li>
+                <li>Full address</li>
+                <li>Year built</li>
+                <li>Optional: Total square footage</li>
+            </ul>
+            
+            <h3><span class="step-number">2</span>Add Rooms</h3>
+            <p>Add rooms to your property by entering:</p>
+            <ul>
+                <li>Room name (e.g., "Living Room", "Kitchen")</li>
+                <li>Width and length in feet</li>
+                <li>Ceiling height</li>
+                <li>Number of windows</li>
+            </ul>
+            <p><em>Tip: Edit your property anytime to add, edit, or delete rooms.</em></p>
+            
+            <h3><span class="step-number">3</span>Create a Job</h3>
+            <p>From your property detail screen, tap "Create Job" and select your job type:</p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>HVAC</strong>
+                    Heating and cooling system installation
+                </div>
+                <div class="feature-item">
+                    <strong>Flooring</strong>
+                    Hardwood, carpet, tile, vinyl, laminate
+                </div>
+                <div class="feature-item">
+                    <strong>Windows</strong>
+                    Window replacement and installation
+                </div>
+                <div class="feature-item">
+                    <strong>Roofing</strong>
+                    Roof repair and replacement
+                </div>
+                <div class="feature-item">
+                    <strong>Insulation</strong>
+                    Attic, wall, and crawlspace insulation
+                </div>
+                <div class="feature-item">
+                    <strong>Plumbing</strong>
+                    Pipe work and fixture installation
+                </div>
+            </div>
+            
+            <h3><span class="step-number">4</span>Enter Job Details</h3>
+            <p>Provide specific information about your project:</p>
+            <ul>
+                <li><strong>For Flooring:</strong> Select which rooms to floor, material type, and quality level</li>
+                <li><strong>For Windows:</strong> Add each window size, type, and specifications</li>
+                <li><strong>For HVAC:</strong> System type, number of units, and installation requirements</li>
+                <li><strong>For Roofing:</strong> Roof type, pitch, and square footage (measure on map)</li>
+                <li><strong>For Insulation:</strong> Area to insulate, R-value, and square footage</li>
+                <li><strong>For Plumbing:</strong> Work type, fixtures, and pipe details</li>
+            </ul>
+            
+            <h3><span class="step-number">5</span>Get Your Estimate</h3>
+            <p>The app will generate a detailed cost estimate including:</p>
+            <ul>
+                <li>Labor costs</li>
+                <li>Material costs</li>
+                <li>Equipment costs (if applicable)</li>
+                <li>Total project cost</li>
             </ul>
         </div>
 
-        <section class="section">
-            <h2>🚀 Getting Started</h2>
+        <!-- Features -->
+        <div class="section">
+            <h2>Key Features</h2>
             
-            <h3>Setting Up Your First Property</h3>
-            
-            <h4>1. Add a Property</h4>
+            <h3>Property Management</h3>
             <ul>
-                <li>Tap the "+" button on the Properties tab</li>
-                <li>Enter your property address</li>
-                <li>Optionally use "Look Up Property" to get details from public records</li>
-                <li><strong>Note:</strong> You get 2 free property lookups, after which property details must be entered manually</li>
+                <li>Store multiple properties with complete room measurements</li>
+                <li>Edit and update property details anytime</li>
+                <li>Add, edit, or delete rooms as needed</li>
+                <li>View all jobs associated with each property</li>
             </ul>
             
-            <h4>2. Look Up Property Details</h4>
-            <p>Tap "Look Up Property" to fetch:</p>
+            <h3>Room Measurements</h3>
             <ul>
-                <li>Square footage</li>
-                <li>Number of bedrooms and bathrooms</li>
-                <li>Year built</li>
-                <li>Property location on map</li>
-            </ul>
-            <p><em>Once looked up, property data is cached and doesn't count toward your lookup limit.</em></p>
-            
-            <h4>3. Add Rooms</h4>
-            <ul>
-                <li>Go to the Rooms tab for your property</li>
-                <li>Tap "+" to add a room</li>
-                <li>Enter room name and dimensions</li>
-                <li>Add walls, windows, doors, and fixtures</li>
-                <li>The app automatically calculates square footage</li>
+                <li>Manually enter room dimensions (width × length × height)</li>
+                <li>Track window and door counts per room</li>
+                <li>Automatic square footage calculation</li>
+                <li>Edit measurements anytime from property details</li>
             </ul>
             
-            <h4>4. Create a Project</h4>
+            <h3>Job Types</h3>
             <ul>
-                <li>Go to the Projects tab</li>
-                <li>Tap "+" to create a new project</li>
-                <li>Select rooms to include</li>
-                <li>View estimated costs for paint and labor</li>
-                <li>Generate a PDF to share with contractors</li>
+                <li><strong>HVAC:</strong> Complete heating and cooling system estimates</li>
+                <li><strong>Flooring:</strong> Room-by-room flooring cost calculation</li>
+                <li><strong>Windows:</strong> Window-by-window pricing with specifications</li>
+                <li><strong>Roofing:</strong> Roof measurement with satellite map integration</li>
+                <li><strong>Insulation:</strong> Area-based insulation estimates with R-value calculations</li>
+                <li><strong>Plumbing:</strong> Fixture and pipe work cost estimates</li>
             </ul>
-        </section>
+            
+            <h3>Cost Estimates</h3>
+            <ul>
+                <li>Industry-standard pricing calculations</li>
+                <li>Detailed labor and material breakdowns</li>
+                <li>Multiple estimates per job for comparison</li>
+                <li>PDF generation for sharing with contractors</li>
+            </ul>
+            
+            <h3>Map Tools</h3>
+            <ul>
+                <li><strong>Roofing:</strong> Trace your roof on satellite imagery for accurate measurements</li>
+                <li><strong>Insulation:</strong> Measure attic footprint from satellite view</li>
+                <li>Automatic square footage calculation based on your tracing</li>
+                <li>Pitch multiplier for accurate roof surface area</li>
+            </ul>
+        </div>
 
-        <div class="divider"></div>
+        <!-- FAQ -->
+        <div class="section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I add rooms to my property?</div>
+                <div class="faq-answer">
+                    Navigate to your property detail screen, tap the menu (three dots), and select "Edit Property". From there, you can add rooms by tapping "Add Room" and entering the dimensions. You can also edit or delete existing rooms.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I create a job without a property?</div>
+                <div class="faq-answer">
+                    No, you must create a property first. This ensures accurate estimates based on actual property dimensions. The simplified workflow helps organize all jobs under their respective properties.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How accurate are the cost estimates?</div>
+                <div class="faq-answer">
+                    Our estimates use industry-standard calculations based on typical labor rates, material costs, and common project requirements. However, actual costs may vary based on your location, specific materials chosen, contractor rates, and market conditions. We recommend using estimates as a starting point and getting quotes from licensed contractors.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I select rooms for a flooring job?</div>
+                <div class="faq-answer">
+                    When creating a flooring job, you'll see a list of all rooms in your property. Simply tap the checkbox next to each room you want to include in the flooring estimate. The app will automatically calculate the total area and provide accurate pricing based on your selections.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I edit a property after creating jobs for it?</div>
+                <div class="faq-answer">
+                    Yes! You can edit your property details and room measurements at any time. However, estimates already generated will not automatically update. You may want to create a new estimate if you've made significant changes to room dimensions.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I delete a room?</div>
+                <div class="faq-answer">
+                    When editing a property, you can delete a room in three ways: (1) Swipe left on the room and tap "Delete", (2) Long-press the room and select "Delete Room" from the context menu, or (3) Tap the red "Delete Room" button at the bottom of the room card.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What job types are supported?</div>
+                <div class="faq-answer">
+                    Exactajob currently supports six job types: HVAC (heating/cooling systems), Flooring (hardwood, carpet, tile, vinyl, laminate), Windows (replacement and installation), Roofing (repair and replacement), Insulation (attic, walls, crawlspace), and Plumbing (pipes and fixtures).
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I share an estimate with a contractor?</div>
+                <div class="faq-answer">
+                    From the project detail screen, view your estimate and tap the share button to generate a PDF. You can then email it to contractors or share it via other apps. The PDF includes all project details, measurements, and cost breakdowns.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I have multiple properties?</div>
+                <div class="faq-answer">
+                    Yes! You can create and manage as many properties as you need. This is useful if you own multiple homes, manage rental properties, or are planning improvements for different locations.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I use the roof measurement map?</div>
+                <div class="faq-answer">
+                    When creating a roofing or attic insulation job, tap "Measure on Satellite Map". The app will show your property from above. Trace the outline of your roof by tapping to place points around the perimeter. The app automatically calculates the square footage based on your tracing and the selected roof pitch.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What if I don't know my property's square footage?</div>
+                <div class="faq-answer">
+                    No problem! The square footage field is optional when creating a property. The app will automatically calculate total square footage by adding up all your room measurements. You can also manually enter a total square footage later if you have that information.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Why do I need to enter room dimensions manually?</div>
+                <div class="faq-answer">
+                    Manual entry ensures accuracy and gives you complete control over your property data. You can measure rooms yourself or use existing floor plans. This approach works on all devices and provides reliable data for cost calculations.
+                </div>
+            </div>
+        </div>
 
-        <section class="section">
-            <h2>❓ Frequently Asked Questions</h2>
+        <!-- Troubleshooting -->
+        <div class="section">
+            <h2>Troubleshooting</h2>
+            
+            <h3>App Not Loading</h3>
+            <ul>
+                <li>Check your internet connection</li>
+                <li>Force quit the app and reopen it</li>
+                <li>Restart your device</li>
+                <li>Ensure you're running the latest version of iOS</li>
+            </ul>
+            
+            <h3>Estimates Seem Inaccurate</h3>
+            <ul>
+                <li>Double-check all room measurements for accuracy</li>
+                <li>Verify you've selected the correct material types and quality levels</li>
+                <li>Remember that estimates are based on average costs and may vary by region</li>
+                <li>Consider getting quotes from local contractors for comparison</li>
+            </ul>
+            
+            <h3>Map Not Loading</h3>
+            <ul>
+                <li>Ensure location services are enabled for Exactajob</li>
+                <li>Check that you have a stable internet connection</li>
+                <li>Try entering a more complete address (including city and state)</li>
+                <li>Give the app permission to access location services in Settings</li>
+            </ul>
+            
+            <h3>Can't Create a Job</h3>
+            <ul>
+                <li>Make sure you've created a property first</li>
+                <li>Verify the property has at least one room (for most job types)</li>
+                <li>Check that all required fields are filled out</li>
+                <li>Ensure the property has valid measurements</li>
+            </ul>
+            
+            <h3>Data Not Saving</h3>
+            <ul>
+                <li>Make sure you tap "Save" before dismissing any edit screens</li>
+                <li>Check that your device has sufficient storage space</li>
+                <li>Try force-quitting and reopening the app</li>
+                <li>Ensure you're not in Low Power Mode which may limit background activity</li>
+            </ul>
+        </div>
+
+        <!-- System Requirements -->
+        <div class="section">
+            <h2>System Requirements</h2>
+            <ul>
+                <li><strong>Platform:</strong> iOS</li>
+                <li><strong>Minimum Version:</strong> iOS 17.0 or later</li>
+                <li><strong>Devices:</strong> iPhone and iPad</li>
+                <li><strong>Storage:</strong> Approximately 50 MB</li>
+                <li><strong>Internet:</strong> Required for property lookups and map features</li>
+            </ul>
+        </div>
+
+        <!-- Privacy & Data -->
+        <div class="section">
+            <h2>Privacy & Data</h2>
+            <p>Your privacy is important to us. Here's how we handle your data:</p>
+            
+            <h3>Data Storage</h3>
+            <ul>
+                <li>All property and job data is stored locally on your device</li>
+                <li>We do not upload your property information to our servers</li>
+                <li>Your measurements and estimates remain private</li>
+            </ul>
             
             <h3>Property Lookups</h3>
+            <ul>
+                <li>When you use the property lookup feature, we query public record APIs</li>
+                <li>Only the address you enter is sent to retrieve property data</li>
+                <li>Property lookup data is cached locally to avoid repeated API calls</li>
+                <li>You have 2 free property lookups (cached lookups don't count)</li>
+            </ul>
             
-            <div class="faq-item">
-                <div class="faq-question">Q: How many property lookups do I get?</div>
-                <div class="faq-answer">A: You get 2 free property lookups per account. Each unique address lookup counts as one use. Once you've looked up a property, it's cached and you can access it without using additional lookups.</div>
-            </div>
+            <h3>No Account Required</h3>
+            <ul>
+                <li>Exactajob does not require account creation</li>
+                <li>No personal information is collected</li>
+                <li>No tracking or analytics beyond basic crash reporting</li>
+            </ul>
             
-            <div class="faq-item">
-                <div class="faq-question">Q: What happens after I use my 2 lookups?</div>
-                <div class="faq-answer">A: You can still use all app features! You'll just need to manually enter property details (square footage, bedrooms, bathrooms) instead of using the automatic lookup. Future updates may offer additional lookup purchases.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Can I look up the same property multiple times?</div>
-                <div class="faq-answer">A: Yes! Once you've looked up a property, it's cached. Subsequent views of that property don't count toward your lookup limit.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: My property lookup failed. What should I do?</div>
-                <div class="faq-answer">
-                    A: Property lookups require:
-                    <ul>
-                        <li>A valid US address</li>
-                        <li>An active internet connection</li>
-                        <li>The address to exist in public records</li>
-                    </ul>
-                    <p>If lookup fails, you can manually enter property details instead. The rest of the app works without property lookups.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Does a failed lookup count against my limit?</div>
-                <div class="faq-answer">A: No, only successful lookups count toward your 2-lookup limit.</div>
-            </div>
-
-            <h3>Measurements & Rooms</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: How do I measure my rooms accurately?</div>
-                <div class="faq-answer">
-                    Best practices:
-                    <ul>
-                        <li>Measure in feet (decimals are supported, e.g., 12.5 feet)</li>
-                        <li>Measure wall to wall, excluding baseboards</li>
-                        <li>For ceiling height, measure floor to ceiling</li>
-                        <li>Count windows and doors accurately</li>
-                        <li>Add notes for irregular features</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Can I edit room measurements after saving?</div>
-                <div class="faq-answer">A: Yes! Tap on any room to edit its measurements, add/remove walls, windows, or doors at any time.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: What if my room has an unusual shape?</div>
-                <div class="faq-answer">A: Break complex rooms into rectangular sections. You can create multiple "rooms" for one actual room, or add notes about unusual features.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Do I need to measure every room?</div>
-                <div class="faq-answer">A: No, only measure rooms included in your project. If you're only painting the living room, you only need to measure that room.</div>
-            </div>
-
-            <h3>Cost Estimates</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: How accurate are the cost estimates?</div>
-                <div class="faq-answer">
-                    <p>Our estimates use industry-standard calculations:</p>
-                    <ul>
-                        <li>Paint coverage: ~350 sq ft per gallon</li>
-                        <li>Labor rates: Based on national averages</li>
-                        <li>Material costs: Typical retail prices</li>
-                    </ul>
-                    <p>Actual costs vary by:</p>
-                    <ul>
-                        <li>Your geographic location</li>
-                        <li>Current material prices</li>
-                        <li>Contractor rates in your area</li>
-                        <li>Project complexity</li>
-                        <li>Season and demand</li>
-                    </ul>
-                    <p><strong>Use estimates as a baseline for budgeting and comparing contractor quotes.</strong></p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Can I customize the cost calculations?</div>
-                <div class="faq-answer">A: Currently, the app uses standard rates. Future versions may allow custom pricing. You can use the measurements to create your own estimates with local prices.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Are labor costs included?</div>
-                <div class="faq-answer">A: Yes, estimates include both materials (paint, supplies) and labor costs based on industry standards.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Why are estimates different from contractor quotes?</div>
-                <div class="faq-answer">
-                    Many factors affect actual quotes:
-                    <ul>
-                        <li>Local market rates</li>
-                        <li>Contractor experience and reputation</li>
-                        <li>Project timeline</li>
-                        <li>Prep work required</li>
-                        <li>Quality of materials</li>
-                        <li>Travel distance</li>
-                    </ul>
-                    <p>Use Exactajob estimates to evaluate if contractor quotes are in a reasonable range.</p>
-                </div>
-            </div>
-
-            <h3>Projects & PDFs</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: How do I create a project?</div>
-                <div class="faq-answer">
-                    <ol>
-                        <li>Go to the Projects tab</li>
-                        <li>Tap "+" to create a new project</li>
-                        <li>Enter a project name</li>
-                        <li>Select which rooms to include</li>
-                        <li>View the cost estimate</li>
-                        <li>Generate a PDF to share</li>
-                    </ol>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Can I share my estimates with contractors?</div>
-                <div class="faq-answer">
-                    Yes! Tap "Generate PDF" to create a detailed document with:
-                    <ul>
-                        <li>Property information</li>
-                        <li>Room measurements</li>
-                        <li>Material quantities needed</li>
-                        <li>Cost breakdown</li>
-                        <li>Your contact information (optional)</li>
-                    </ul>
-                    <p>Share the PDF via email, Messages, or any sharing option.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Can I have multiple projects for one property?</div>
-                <div class="faq-answer">
-                    Absolutely! Create separate projects for:
-                    <ul>
-                        <li>Different rooms or areas</li>
-                        <li>Phased renovations</li>
-                        <li>Comparing different options</li>
-                        <li>Different types of work</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: What's the difference between project statuses?</div>
-                <div class="faq-answer">
-                    <ul>
-                        <li><strong>Planning:</strong> Project in early stages, getting quotes</li>
-                        <li><strong>In Progress:</strong> Work has started</li>
-                        <li><strong>Completed:</strong> Project finished</li>
-                        <li><strong>On Hold:</strong> Paused or delayed</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3>Data & Privacy</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Where is my data stored?</div>
-                <div class="faq-answer">A: All your data is stored locally on your device. We do NOT store your information on our servers. Optionally, you can enable iCloud sync to access data across your Apple devices.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Is my data secure?</div>
-                <div class="faq-answer">
-                    Yes:
-                    <ul>
-                        <li>Data stored locally on your device</li>
-                        <li>Protected by iOS security features</li>
-                        <li>Optional iCloud encryption</li>
-                        <li>No data transmitted to our servers</li>
-                        <li>API calls use HTTPS encryption</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Can I export my data?</div>
-                <div class="faq-answer">A: Yes, you can export projects as PDFs. Future versions may add more export options.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: What happens if I delete the app?</div>
-                <div class="faq-answer">A: Uninstalling the app removes all local data. If you use iCloud sync, data remains in iCloud until you delete it from iCloud settings.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Can I use the app offline?</div>
-                <div class="faq-answer">
-                    Yes! All core features work offline:
-                    <ul>
-                        <li>Add and measure rooms ✅</li>
-                        <li>Create projects ✅</li>
-                        <li>View saved properties ✅</li>
-                        <li>Generate estimates ✅</li>
-                    </ul>
-                    <p>Property lookups require internet (since they query an external API).</p>
-                </div>
-            </div>
-
-            <h3>Technical Issues</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: The app crashes when I try to [action]. What should I do?</div>
-                <div class="faq-answer">
-                    <ol>
-                        <li>Force close the app and restart it</li>
-                        <li>Restart your device</li>
-                        <li>Check for app updates in the App Store</li>
-                        <li>If the issue persists, email <a href="mailto:support@exactajob.com">support@exactajob.com</a> with:
-                            <ul>
-                                <li>iOS version</li>
-                                <li>Device model</li>
-                                <li>Steps to reproduce the issue</li>
-                                <li>Screenshots if possible</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: I can't see my properties/rooms/projects.</div>
-                <div class="faq-answer">
-                    Try:
-                    <ul>
-                        <li>Pull down to refresh the list</li>
-                        <li>Check you're on the correct tab</li>
-                        <li>Restart the app</li>
-                        <li>Verify iCloud sync settings (if enabled)</li>
-                        <li>Contact support if data is missing</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3>App Features</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Does the app work on iPad?</div>
-                <div class="faq-answer">A: Yes! Exactajob is a universal app that works on iPhone and iPad with an optimized interface for each.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Can I use the app for things other than painting?</div>
-                <div class="faq-answer">
-                    While estimates are currently focused on painting projects, room measurements are useful for:
-                    <ul>
-                        <li>Flooring projects</li>
-                        <li>Window treatments</li>
-                        <li>Furniture planning</li>
-                        <li>Any renovation requiring accurate measurements</li>
-                    </ul>
-                    <p>Future versions may include estimates for other project types.</p>
-                </div>
-            </div>
-
-            <h3>Account & Billing</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Do I need to create an account?</div>
-                <div class="faq-answer">A: No! Exactajob works without sign-up or registration. All features are available immediately.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Is the app free?</div>
-                <div class="faq-answer">
-                    Yes! The app is free to download and use. You get:
-                    <ul>
-                        <li>Unlimited properties</li>
-                        <li>Unlimited rooms and measurements</li>
-                        <li>Unlimited projects</li>
-                        <li>2 free property lookups</li>
-                        <li>PDF generation</li>
-                        <li>All features</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Q: Will there be in-app purchases?</div>
-                <div class="faq-answer">
-                    Future updates may offer:
-                    <ul>
-                        <li>Additional property lookups</li>
-                        <li>Premium features</li>
-                        <li>Advanced export options</li>
-                    </ul>
-                    <p>We'll always keep core features free!</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="section">
-            <h2>🛠 Troubleshooting Guide</h2>
-            
-            <div class="warning-box">
-                <h3>Problem: Property Lookup Not Working</h3>
-                <p><strong>Check:</strong></p>
-                <ul>
-                    <li>✅ Internet connection is active</li>
-                    <li>✅ Address is valid and in the United States</li>
-                    <li>✅ Address includes street number, street name, city, state, ZIP</li>
-                    <li>✅ You have lookups remaining (check Properties tab)</li>
-                </ul>
-                <p><strong>Try:</strong></p>
-                <ul>
-                    <li>Verify the address is correct (check Google Maps)</li>
-                    <li>Use a more specific address format</li>
-                    <li>Wait a moment and try again</li>
-                    <li>Manually enter property details if lookup continues to fail</li>
-                </ul>
-            </div>
-            
-            <div class="warning-box">
-                <h3>Problem: App Running Slowly</h3>
-                <p><strong>Solutions:</strong></p>
-                <ul>
-                    <li>Close other apps to free up memory</li>
-                    <li>Restart the app</li>
-                    <li>Restart your device</li>
-                    <li>Delete old projects you no longer need</li>
-                    <li>Remove unused properties</li>
-                    <li>Update to the latest version</li>
-                    <li>Check available storage space</li>
-                </ul>
-            </div>
-            
-            <div class="warning-box">
-                <h3>Problem: PDF Won't Generate or Open</h3>
-                <p><strong>Solutions:</strong></p>
-                <ul>
-                    <li>Ensure project has rooms with measurements</li>
-                    <li>Check device storage space</li>
-                    <li>Try generating again</li>
-                    <li>Share PDF to Files app first, then open</li>
-                    <li>Update iOS to latest version</li>
-                    <li>Contact support with screenshot of error</li>
-                </ul>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="section">
-            <h2>💡 Tips & Best Practices</h2>
-            
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <h4>📐 Measuring Tips</h4>
-                    <ul>
-                        <li>Measure twice, enter once</li>
-                        <li>Use a laser measure for accuracy</li>
-                        <li>Round to the nearest 0.5 feet</li>
-                        <li>Take photos while measuring</li>
-                        <li>Add notes for irregular features</li>
-                    </ul>
-                </div>
-                
-                <div class="tip-card">
-                    <h4>💰 Cost Estimation Tips</h4>
-                    <ul>
-                        <li>Get multiple scenarios</li>
-                        <li>Add 10-20% buffer</li>
-                        <li>Compare 3+ contractor quotes</li>
-                        <li>Ask about estimate details</li>
-                        <li>Consider material quality</li>
-                    </ul>
-                </div>
-                
-                <div class="tip-card">
-                    <h4>📄 Sharing with Contractors</h4>
-                    <ul>
-                        <li>Generate professional PDFs</li>
-                        <li>Include all measurements</li>
-                        <li>Add photos of areas</li>
-                        <li>Note special requirements</li>
-                        <li>Request itemized quotes</li>
-                    </ul>
-                </div>
-                
-                <div class="tip-card">
-                    <h4>🏠 Organizing Properties</h4>
-                    <ul>
-                        <li>Use descriptive names</li>
-                        <li>Add identifying photos</li>
-                        <li>Include full addresses</li>
-                        <li>Delete old/unused items</li>
-                        <li>Track project progress</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="contact-box">
-            <h2>📧 Contact Support</h2>
-            <p>Can't find what you're looking for? We're here to help!</p>
-            <p style="margin: 20px 0;"><a href="mailto:support@exactajob.com">support@exactajob.com</a></p>
-            <p style="font-size: 0.9em;">Please include: device model, iOS version, and screenshots if applicable</p>
-            <p style="font-size: 0.9em;"><strong>Response time:</strong> Usually within 24-48 hours (weekdays)</p>
+            <p>For complete details, please review our <a href="https://www.exactajob.com/privacy" target="_blank">Privacy Policy</a>.</p>
         </div>
 
-        <div class="success-box">
-            <h3>🎉 Thank You!</h3>
-            <p>Thank you for using Exactajob! We're committed to helping homeowners plan and budget for home improvements with confidence.</p>
-            <p>Questions? Feedback? We're always here to help.</p>
+        <!-- Contact Support -->
+        <div class="section">
+            <h2>Contact Support</h2>
+            <p>Need help? We're here for you!</p>
+            
+            <div class="contact-box">
+                <p><strong>Email Support:</strong><br>
+                <a href="mailto:support@exactajob.com">support@exactajob.com</a></p>
+                
+                <p><strong>Response Time:</strong><br>
+                We typically respond within 24-48 hours</p>
+                
+                <p><strong>Website:</strong><br>
+                <a href="https://www.exactajob.com" target="_blank">www.exactajob.com</a></p>
+            </div>
+            
+            <h3>When Contacting Support, Please Include:</h3>
+            <ul>
+                <li>Your iOS version (Settings → General → About)</li>
+                <li>Exactajob app version (visible in Settings screen)</li>
+                <li>Description of the issue</li>
+                <li>Steps to reproduce the problem</li>
+                <li>Screenshots if applicable</li>
+            </ul>
+            
+            <a href="mailto:support@exactajob.com?subject=Exactajob%20Support%20Request" class="button">Email Support</a>
+        </div>
+
+        <!-- Tips & Best Practices -->
+        <div class="section">
+            <h2>Tips & Best Practices</h2>
+            
+            <h3>For Accurate Estimates</h3>
+            <ul>
+                <li>Measure rooms carefully using a tape measure</li>
+                <li>Round to the nearest foot for room dimensions</li>
+                <li>Count all windows and doors in each room</li>
+                <li>Use the property lookup feature to get accurate square footage</li>
+                <li>Select material types and quality levels that match your actual plans</li>
+            </ul>
+            
+            <h3>Organizing Your Properties</h3>
+            <ul>
+                <li>Use descriptive property names (e.g., "Main Residence", "Rental - Oak Street")</li>
+                <li>Enter complete addresses for map features to work properly</li>
+                <li>Add all rooms to your property before creating jobs</li>
+                <li>Update room measurements if you discover they were incorrect</li>
+            </ul>
+            
+            <h3>Working with Contractors</h3>
+            <ul>
+                <li>Share your PDF estimates with multiple contractors for competitive bids</li>
+                <li>Use estimates as a baseline to evaluate contractor quotes</li>
+                <li>Discuss any significant differences between your estimate and contractor quotes</li>
+                <li>Remember that estimates are starting points, not guaranteed prices</li>
+            </ul>
+            
+            <h3>Planning Multiple Projects</h3>
+            <ul>
+                <li>Create separate jobs for each project type</li>
+                <li>Use different property names or notes to track renovation phases</li>
+                <li>Compare estimates to prioritize projects by cost</li>
+                <li>Update job status as projects progress</li>
+            </ul>
+        </div>
+
+        <!-- Version History -->
+        <div class="section">
+            <h2>Version History</h2>
+            
+            <h3>Version 1.0 (Current)</h3>
+            <ul>
+                <li>Initial release</li>
+                <li>Support for 6 job types: HVAC, Flooring, Windows, Roofing, Insulation, Plumbing</li>
+                <li>Property and room management</li>
+                <li>Cost estimation engine</li>
+                <li>PDF generation and sharing</li>
+                <li>Satellite map measurement for roofing and insulation</li>
+                <li>Property data lookup from public records</li>
+            </ul>
+        </div>
+
+        <!-- Feedback -->
+        <div class="section">
+            <h2>Feedback & Feature Requests</h2>
+            <p>We're constantly working to improve Exactajob and would love to hear from you!</p>
+            
+            <h3>Share Your Ideas</h3>
+            <p>Have a suggestion for a new feature or improvement? Email us at <a href="mailto:support@exactajob.com">support@exactajob.com</a> with "Feature Request" in the subject line.</p>
+            
+            <h3>Report a Bug</h3>
+            <p>Found a bug? Please report it to <a href="mailto:support@exactajob.com">support@exactajob.com</a> with as much detail as possible, including steps to reproduce the issue.</p>
+            
+            <h3>Rate the App</h3>
+            <p>If you love Exactajob, please consider leaving a review on the App Store. Your feedback helps us improve and helps other users discover the app!</p>
         </div>
     </div>
 
-    <footer>
-        <p><strong>Exactajob</strong> - Home Repair Cost Estimator</p>
-        <p style="margin: 15px 0;">
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="terms.html">Terms of Service</a> | 
-            <a href="mailto:support@exactajob.com">Contact</a>
-        </p>
-        <p style="font-size: 0.9em; opacity: 0.8;">Last Updated: February 15, 2026</p>
-        <p style="font-size: 0.9em; opacity: 0.8;">&copy; 2026 Exactajob. All rights reserved.</p>
-    </footer>
+    <div class="footer">
+        <p>&copy; 2026 Exactajob. All rights reserved.</p>
+        <p><a href="https://www.exactajob.com/privacy">Privacy Policy</a> | <a href="https://www.exactajob.com/terms">Terms of Service</a></p>
+    </div>
 </body>
 </html>
